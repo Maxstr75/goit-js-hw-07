@@ -64,25 +64,3 @@ export const galleryItems = [
   },
 ];
 
-const galleryContainer = document.querySelector('.gallery');
-const itemMarkup = createGalleryItemsMarkup(galleryItems);
-
-galleryContainer.insertAdjacentHTML('beforeend', itemMarkup);
-
-function createGalleryItemsMarkup(galleryItems) {
-  return galleryItems.map(({preview, original, description}) => {
-    return `
-    <div class="gallery__item">
-        <a class="gallery__link" href="${original}">
-            <img
-                class="gallery__image"
-                src="${preview}"
-                data-source="${original}"
-                alt="${description}"
-            />
-        </a>
-    </div>
-    `;
-  })
-    .join('');
-}
