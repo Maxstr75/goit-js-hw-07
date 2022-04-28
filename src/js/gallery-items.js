@@ -67,7 +67,7 @@ export const galleryItems = [
 console.log(createGalleryItemsMarkup(galleryItems));
 
 function createGalleryItemsMarkup(galleryItems) {
-  const markup = galleryItems.map(({preview, original, description}) => {
+  return galleryItems.map(({preview, original, description}) => {
     return `
     <div class="gallery__item">
         <a class="gallery__link" href="${original}">
@@ -80,7 +80,8 @@ function createGalleryItemsMarkup(galleryItems) {
         </a>
     </div>
     `;
-  });
-  console.log(markup[0]);
+  })
+    .join('');
+  return markup;
     
 }
