@@ -64,7 +64,10 @@ export const galleryItems = [
   },
 ];
 
-console.log(createGalleryItemsMarkup(galleryItems));
+const galleryContainer = document.querySelector('.gallery');
+const itemMarkup = createGalleryItemsMarkup(galleryItems);
+
+galleryContainer.insertAdjacentHTML('beforeend', itemMarkup);
 
 function createGalleryItemsMarkup(galleryItems) {
   return galleryItems.map(({preview, original, description}) => {
