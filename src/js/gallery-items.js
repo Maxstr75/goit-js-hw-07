@@ -85,5 +85,4 @@ function createGalleryItemsMarkup(galleryItems) {
     `;
   })
     .join('');
-
 }
