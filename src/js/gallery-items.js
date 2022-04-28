@@ -63,3 +63,24 @@ export const galleryItems = [
     description: 'Lighthouse Coast Sea',
   },
 ];
+
+console.log(createGalleryItemsMarkup(galleryItems));
+
+function createGalleryItemsMarkup(galleryItems) {
+  const markup = galleryItems.map(({preview, original, description}) => {
+    return `
+    <div class="gallery__item">
+        <a class="gallery__link" href="${original}">
+            <img
+                class="gallery__image"
+                src="${preview}"
+                data-source="${original}"
+                alt="${description}"
+            />
+        </a>
+    </div>
+    `;
+  });
+  console.log(markup[0]);
+    
+}
